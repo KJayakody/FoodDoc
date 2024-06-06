@@ -2,8 +2,8 @@
 
 
 :root {
-    --primary: #159d31;
-    --secondary: #cbef02;
+    --primary: #0ee2d0f4;
+    --secondary: #0c5d0c;
     --light: #f9f7f9;
     --dark: #28078b;
     
@@ -21,6 +21,7 @@
     transition: opacity .5s ease-out, visibility 0s linear 0s;
     visibility: visible;
     opacity: 1;
+    
 }
 
 
@@ -46,13 +47,13 @@ h6,
 
 /*** Gradient Text & BG ***/
 .text-primary-gradient {
-    background: linear-gradient(to bottom right, var(--primary), var(--secondary));
+    background: linear-gradient(to bottom right, var(--light));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-.text-secondary-gradient {
-    background: linear-gradient(to bottom right, var(--secondary), var(--primary));
+.text-light-gradient {
+    background: linear-gradient(to bottom right, var(--light));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
