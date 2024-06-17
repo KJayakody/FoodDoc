@@ -168,13 +168,19 @@ app.post('/chat', async (req, res) => {
             contents: [{ role: 'user', parts }],
             generationConfig,
         });
-        res.json({ response: result.response.text });
+        console.log("Running model")
+        return res.json({ response: result.response.text });
+        console.log('Generated content:', result);
+        // return res.json({ response: "This is working"})
+        // console.log('Generated content:', result.response.text);
     } catch (error) {
         console.error('Error generating content:', error);
         res.status(500).json({ response: 'Sorry, something went wrong.' });
+        //console.log('Error generating content:', error);
     }
 });
 
 app.listen(port, () => {
-    console.log(`Server is running on http://localhost:${port}`);
+    console.log(`Server is running on http://172.22.2.92:${port}`); // http://YOUR_IP_ADDRESS:
+
 });
