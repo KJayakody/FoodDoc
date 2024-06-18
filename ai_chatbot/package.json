@@ -15,15 +15,16 @@
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "expo": "~51.0.14",
+    "expo-constants": "~16.0.2",
     "expo-status-bar": "~1.12.1",
     "express": "^4.19.2",
     "manifest": "^4.0.0-alpha.8",
     "react": "18.2.0",
-    "react-native": "0.74.2",
-    "expo-constants": "~16.0.2"
+    "react-native": "0.74.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.20.0"
+    "@babel/core": "^7.20.0",
+    "@types/expo": "^33.0.1"
   },
   "private": true
 }
