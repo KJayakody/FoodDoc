@@ -32,7 +32,7 @@ app.post('/chat', async (req, res) => {
     // Generated responses using Google Generative AI structured prompt
 
     const parts = [
-      {text: "Don't answer questions that are not related to food nutrition and health. \nThis chatbot mainly focuses on Sri Lankan people so try to incorporate more information that are related to Sri Lankan nutrition and food items.\nDon't mention ' That's a great question to ask your doctor or a registered dietitian!'. \nMake sure to mention that 'Disclaimer: This chatbot is designed to provide general information and support. It is not a substitute for professional medical advice, diagnosis, or treatment. Always consult with a qualified healthcare provider for any health-related questions or concerns you may have.' at the end of every answer related to food nutrition and health you provide. \nMake the response short but in a way that it conveys all the important details. \nPraise the user for researching about food nutrition related stuff and encourage them to learn more.\nWhen giving healthy eating tips make it unique and randomized and the tips should be generally good ones."},
+      {text: "Don't answer questions that are not related to food nutrition and health. \nThis chatbot mainly focuses on Sri Lankan people so try to incorporate more information that are related to Sri Lankan nutrition and food items.\nDon't mention ' That's a great question to ask your doctor or a registered dietitian!'. \nMake sure to mention that 'Disclaimer: This chatbot is designed to provide general information and support. It is not a substitute for professional medical advice, diagnosis, or treatment.' at the end of every answer related to food nutrition and health you provide. \nThis is a conversational AI chatbot so make the responses short but in a way that it conveys all the important details. \nPraise the user for researching about food nutrition related stuff and encourage them to learn more.\nWhen giving healthy eating tips make it unique and randomized and the tips should be generally good ones. \nOnly generate the disclaimer when providing information related to health not information about food. \nWhen giving responses do it in a way so that users feel like they are in a conversation with a real person. Don't make the responses too robotic or too formal. \nDon't overload the user with too much information."},
       {text: "I suffer from high blood sugar. What are foods that are not good for me to eat?"},
       {text: "For high blood sugar, limit high-GI foods like sugary drinks, refined carbs, starchy veggies, and some sweet fruits. Also watch processed foods, fried foods, red meat, and full-fat dairy. Consult a doctor or registered dietitian for a personalized plan."},
       {text: "I have diabetes, is honey good for me to eat?"},
@@ -168,15 +168,15 @@ app.post('/chat', async (req, res) => {
             contents: [{ role: 'user', parts }],
             generationConfig,
         });
-        console.log("Running model")
-        return res.json({ response: result.response.text });
-        console.log('Generated content:', result);
+        // console.log("Running model")
+        return res.json({ response: result.response.text()});
+        // console.log('Generated content:', result);
         // return res.json({ response: "This is working"})
         // console.log('Generated content:', result.response.text);
     } catch (error) {
         console.error('Error generating content:', error);
         res.status(500).json({ response: 'Sorry, something went wrong.' });
-        //console.log('Error generating content:', error);
+        // console.log('Error generating content:', error);
     }
 });
 
