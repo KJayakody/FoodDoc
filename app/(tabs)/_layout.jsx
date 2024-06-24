@@ -4,8 +4,10 @@ import {Tabs} from 'expo-router'
 import TabBar from '../../components/TabBar'
 
 
+
 const _layout = () => {
   return (
+
     <Tabs
          tabBar={props=> <TabBar {...props} />}
          
@@ -13,14 +15,18 @@ const _layout = () => {
       <Tabs.Screen
           name="index"
           options={{
-            title :"FoodDoc"
+            title :"FoodDoc",
+            headerShown : false,
+            
+             
              }} 
       />
 
       <Tabs.Screen
           name="AI"
           options={{
-            title :"AI"
+            title :"AI",
+             headerShown : false ,
           }} 
 
       />
