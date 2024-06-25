@@ -1,3 +1,4 @@
+import 'react-native-gesture-handler';
 import { View, Text, Image, TouchableOpacity, ImageBackground, TextInput ,ScrollView,  fontWeight } from 'react-native';
 import React, { useState } from 'react';
 import { StyleSheet } from 'react-native';
@@ -6,10 +7,12 @@ import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 import { Directions } from 'react-native-gesture-handler';
 import AntDesign from '@expo/vector-icons/AntDesign';
 
-
-
+import { useNavigation } from '@react-navigation/native';
 
 const index = () => {
+
+const navigation = useNavigation();
+
   const [searchText, setSearchText] = useState('');
 
   const handleSearchChange = (text) => {
@@ -18,7 +21,7 @@ const index = () => {
 
   return (
     <ImageBackground source={require('../../assets/images/img.jpg')} style={{ width: '100%', height: '100%' }}>
-      <TouchableOpacity style={styles.profileButton} onPress={() => { /* Handle button press */ }}>
+      <TouchableOpacity style={styles.profileButton} onPress={() => navigation.navigate('Profile') }>
         <FontAwesome name="user" size={24} color="black" />
       </TouchableOpacity>
       <View style={styles.searchBarContainer}>
