@@ -151,10 +151,10 @@ const styles = StyleSheet.create({
   AI : {
      
      position : 'absolute',
-     padding: 15,
+     padding: '3%',
      backgroundColor: 'black',
      borderRadius: 50,
-     right : '5%',
+     right : '2%',
      
   },
 

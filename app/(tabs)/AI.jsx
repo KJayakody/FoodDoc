@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, TextInput, View, Button, ScrollView } from 'react-native';
+import { StyleSheet, Text, TextInput, View, Button, ScrollView, ImageBackground } from 'react-native';
 import axios from 'axios'; // Import axios library to make HTTP requests
 
 export default function App() {
@@ -24,6 +24,7 @@ export default function App() {
 
   return (
     <View style={styles.container}>
+      <ImageBackground source={require('../../assets/images/img.jpg')} style={{width: '100%', height: '100%'}}>
       <Text style={styles.title}>FoodDoc Chatbot</Text>
       <ScrollView style={styles.chatWindow}>
         {chatHistory.map((chat, index) => (
@@ -41,6 +42,7 @@ export default function App() {
         />
         <Button title="Send" onPress={handleSend} />
       </View>
+      </ImageBackground>
     </View>
   );
 }
@@ -49,7 +51,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#f4f4f4',
-    paddingTop: 50,
+    paddingTop: 20,
   },
   title: {
     fontSize: 24,
@@ -84,6 +86,7 @@ const styles = StyleSheet.create({
     padding: 10,
     borderTopWidth: 1,
     borderColor: '#ddd',
+    marginBottom: 50,
   },
   input: {
     flex: 1,
