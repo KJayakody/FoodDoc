@@ -62,15 +62,17 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: 'center',
-        padding: 20,
     },
 
     input: {
+        left: 10,
+        width: '95%',
         height: 40,
         borderColor: '#ddd',
         borderWidth: 1,
         marginBottom: 20,
         paddingHorizontal: 10,
+        backgroundColor: '#fff',
     },
 
     title: {

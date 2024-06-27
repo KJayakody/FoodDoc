@@ -65,7 +65,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    padding: 20,
   },
   title: {
     fontSize: 24,
@@ -73,11 +72,14 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   input: {
+    left: 10,
     height: 40,
     borderColor: '#ddd',
     borderWidth: 1,
     marginBottom: 20,
     paddingHorizontal: 10,
+    width: '95%',
+    backgroundColor: '#fff',
   },
   error: {
     color: 'red',
