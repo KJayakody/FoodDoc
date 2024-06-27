@@ -58,7 +58,7 @@ export default function App() {
               label: item.food.label,
               cal: item.food.nutrients.ENERC_KCAL,
               brand: item.food.brand || 'Unknown',
-              image : item.food.image || 'https://example.com/default-image.jpg',
+              image: item.food.image || 'https://example.com/default-image.jpg',
               fat: item.food.nutrients.FAT,
             })) : foodItems}
             renderItem={({ item }) => <FoodListItems item={item} />}
@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
     top: '10%',
   },
   input: {
-    backgroundColor: 'gainsboro',
+    backgroundColor: '#f2f2f2',
     width: '100%',
     padding: 10,
     borderRadius: 5,

@@ -9,7 +9,7 @@ export default function FoodListItems({ item }) {
         <Text style={styles.label}>{item.label}</Text>
         <Text style={styles.details}>Calories: {item.cal}</Text>
         <Text style={styles.details}>Brand: {item.brand}</Text>
-        <Text style={styles.details}>Fat: {item.fat}</Text>
+        
       </View>
     </View>
   );
