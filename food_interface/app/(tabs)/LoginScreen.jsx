@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
+import { View, Text, TextInput, Button, StyleSheet, ImageBackground, Image } from 'react-native';
 import { supabase } from '../../supabaseClient.js';
 import { useNavigation } from '@react-navigation/native';
 
@@ -25,6 +25,8 @@ const LoginScreen = () => {
 
   return (
     <View style={styles.container}>
+      <ImageBackground source={require('../../assets/images/img.jpg')} style={{width: '100%', height: '100%', flex: 1}}>
+      <Image source={require('../../assets/images/fooddoc_logo.png')} style={{width: 300, height: 300, alignSelf: 'center'}} />
       <Text style={styles.title}>Login</Text>
       {error && <Text style={styles.error}>{error}</Text>}
       <TextInput
@@ -41,6 +43,11 @@ const LoginScreen = () => {
         secureTextEntry
       />
       <Button title="Login" onPress={handleLogin} />
+
+      <TextInput 
+        placeholder='Don’t have an account? Sign up here' 
+        style={{textAlign: 'center', marginTop: 20}} onPress={() => navigation.navigate('Signup')}></TextInput>
+      </ImageBackground>
     </View>
   );
 };
