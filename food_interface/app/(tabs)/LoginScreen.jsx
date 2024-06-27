@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet, ImageBackground, Image } from 'react-native';
 import { supabase } from '../../supabaseClient.js';
 import { useNavigation } from '@react-navigation/native';
+import { getBackgroundColorAsync } from 'expo-system-ui';
 
 const LoginScreen = () => {
   const [email, setEmail] = useState('');
@@ -23,6 +24,10 @@ const LoginScreen = () => {
     //}
   };
 
+  const handleSignup = async () => {
+    navigation.navigate('Signup');
+  };
+
   return (
     <View style={styles.container}>
       <ImageBackground source={require('../../assets/images/img.jpg')} style={{width: '100%', height: '100%', flex: 1}}>
@@ -42,11 +47,13 @@ const LoginScreen = () => {
         onChangeText={setPassword}
         secureTextEntry
       />
+
       <Button title="Login" onPress={handleLogin} />
 
-      <TextInput 
-        placeholder='Don’t have an account? Sign up here' 
-        style={{textAlign: 'center', marginTop: 20}} onPress={() => navigation.navigate('Signup')}></TextInput>
+      <Text
+        style={{textAlign: 'center', marginTop: 20,}} onPress={handleSignup}>
+          Don’t have an account? Sign up here
+      </Text>
       </ImageBackground>
     </View>
   );
@@ -65,7 +72,7 @@ const styles = StyleSheet.create({
   },
   input: {
     height: 40,
-    borderColor: '#ccc',
+    borderColor: '#ddd',
     borderWidth: 1,
     marginBottom: 20,
     paddingHorizontal: 10,

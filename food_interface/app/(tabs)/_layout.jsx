@@ -6,7 +6,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import ProfileButton from '../../components/ProfileButton';
 import LoginScreen from './LoginScreen';
-// import SignupScreen from './SignupScreen';
+import SignupScreen from './SignupScreen';
 
 // Creating stack navigator
 const Stack = createStackNavigator();
@@ -21,11 +21,17 @@ const _layout = () => {
         options= {{ headerShown : false }} 
       />
 
-      {/* <Stack.Screen
+      <Stack.Screen
+        name='Login'
+        component={LoginScreen}
+        options={{ headerShown : false }}
+      />
+
+      <Stack.Screen
         name='Signup'
         component={SignupScreen}
-        options={{ title: 'Signup' }}
-      /> */}
+        options={{ headerShown : false }}
+      />
 
       <Stack.Screen
         name="Main"
