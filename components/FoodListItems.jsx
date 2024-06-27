@@ -1,27 +1,44 @@
-import { View, Text ,StyleSheet } from 'react-native'
-import React from 'react'
-import AntDesign from '@expo/vector-icons/AntDesign';
+import React from 'react';
+import { View, Text, Image, StyleSheet } from 'react-native';
 
-
-const FoodListItems = ({item}) => {
-    return (
-        <View style={{
-            backgroundColor : 'gainsboro',
-            padding : 10 ,
-            borderRadius :5,
-            flexDirection : 'row',
-            justifyContent : 'space-between',
-            alignItems : 'center',
-
-            }}>
-        <View style={{flex :1 ,gap :5}}>     
-        <Text style={{fontWeight: 'bold',fontSize :16 }}>{item.label}</Text>
-        <Text style={{color :'dimgrey'}}>{item.cal} cal ,{item.brand}</Text>
-        </View>
-        <AntDesign name="pluscircleo" size={24} color="royalblue" />   
-
-        </View>
-        
-    )
+export default function FoodListItems({ item }) {
+  return (
+    <View style={styles.container}>
+      <Image source={{ uri: item.image }} style={styles.image} />
+      <View style={styles.textContainer}>
+        <Text style={styles.label}>{item.label}</Text>
+        <Text style={styles.details}>Calories: {item.cal}</Text>
+        <Text style={styles.details}>Brand: {item.brand}</Text>
+        <Text style={styles.details}>Fat: {item.fat}</Text>
+      </View>
+    </View>
+  );
 }
-export default FoodListItems;
+
+const styles = StyleSheet.create({
+  container: {
+    flexDirection: 'row',
+    padding: 10,
+    backgroundColor: '#fff',
+    borderRadius: 5,
+    marginBottom: 10,
+  },
+  image: {
+    width: 50,
+    height: 50,
+    borderRadius: 5,
+    marginRight: 10,
+  },
+  textContainer: {
+    flex: 1,
+    justifyContent: 'center',
+  },
+  label: {
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
+  details: {
+    fontSize: 14,
+    color: '#555',
+  },
+});
