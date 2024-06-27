@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Button, StyleSheet, ImageBackground, Image } from 'react-native';
+import { View, Text, TextInput, Button, StyleSheet, ImageBackground, Image, TouchableOpacity } from 'react-native';
 // import { supabase } from '../../supabaseClient.js';
 import { useNavigation } from '@react-navigation/native';
 
@@ -11,10 +11,12 @@ const SignupScreen = () => {
     const navigation = useNavigation();
 
     const handleSignup = () => {
+        // console.log("sign up")
+        navigation.navigate('Quest_1');
         // Need to add signup logic here
-        console.log('Signup Button clicked');
-        console.log('Email:', email);
-        console.log('Password:', password);
+        // console.log('Signup Button clicked');
+        // console.log('Email:', email);
+        // console.log('Password:', password);
     };
 
     const handleLogin = async () => {
@@ -23,24 +25,29 @@ const SignupScreen = () => {
 
     return (
         <View style={styles.container}>
-            <ImageBackground source={require('../../assets/images/img.jpg')} style={{width: '100%', height: '100%', flex: 1}}>
+            <ImageBackground source={require('../../assets/images/img.jpg')} style={{flex: 1}}>
             <Image source={require('../../assets/images/fooddoc_logo.png')} style={{width: 300, height: 300, alignSelf: 'center'}} />
             <Text style={styles.title}>Signup</Text>
+
             <TextInput
                 style={styles.input}
                 type="email"
                 placeholder="Email"
                 value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                onChangeText={setEmail}
             />
+
             <TextInput
                 style={styles.input}
                 type="password"
                 placeholder="Password"
                 value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                onChangeText={setPassword}
             />
-            <Button title='Signup' onClick={handleSignup}>Signup</Button>
+            
+            <TouchableOpacity style={{marginTop: 10, width: 150, alignSelf: 'center' /*padding: 100,*/}}>
+            <Button color={'green'} title='Sign up'onPress={handleSignup}>Signup</Button>
+            </TouchableOpacity>
 
             <Text
             style={{textAlign: 'center', marginTop: 20,}} onPress={handleLogin}>

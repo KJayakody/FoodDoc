@@ -7,6 +7,8 @@ import { createStackNavigator } from '@react-navigation/stack';
 import ProfileButton from '../../components/ProfileButton';
 import LoginScreen from './LoginScreen';
 import SignupScreen from './SignupScreen';
+import Quest_1 from './Quest_1';
+import Quest_2 from './Quest_2';
 
 // Creating stack navigator
 const Stack = createStackNavigator();
@@ -30,6 +32,18 @@ const _layout = () => {
       <Stack.Screen
         name='Signup'
         component={SignupScreen}
+        options={{ headerShown : false }}
+      />
+
+      <Stack.Screen
+        name="Quest_1"
+        component={Quest_1}
+        options={{ headerShown : false }}
+      />
+
+      <Stack.Screen
+        name="Quest_2"
+        component={Quest_2}
         options={{ headerShown : false }}
       />
 
