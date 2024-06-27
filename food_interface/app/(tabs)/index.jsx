@@ -17,6 +17,7 @@ const navigation = useNavigation();
 
   const handleSearchChange = (text) => {
     setSearchText(text);
+    navigation.navigate('Search');
   };
 
   return (
@@ -28,7 +29,7 @@ const navigation = useNavigation();
         <TextInput
           placeholder="Search the product..."
           style={styles.searchInput}
-          onChangeText={handleSearchChange}
+          onPress={handleSearchChange}
           value={searchText}
         />
       </View>

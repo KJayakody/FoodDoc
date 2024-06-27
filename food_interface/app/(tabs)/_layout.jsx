@@ -9,6 +9,7 @@ import LoginScreen from './LoginScreen';
 import SignupScreen from './SignupScreen';
 import Quest_1 from './Quest_1';
 import Quest_2 from './Quest_2';
+import Search_1 from './Search_1';
 
 // Creating stack navigator
 const Stack = createStackNavigator();
@@ -21,6 +22,12 @@ const _layout = () => {
         name="FoodDoc" 
         component={LoginScreen} 
         options= {{ headerShown : false }} 
+      />
+
+      <Stack.Screen
+        name='Search'
+        component={Search_1}
+        options={{ headerShown : false }}
       />
 
       <Stack.Screen
